@@ -1,0 +1,122 @@
+/* =========================================================
+   Veterinaria San Marcos — estilos.css
+   Nav, body y footer — paleta azul pastel
+   ========================================================= */
+:root{
+  --color-bg: #F3F8FB;
+  --color-surface: #FFFFFF;
+  --color-primary: #447c9c;
+  --color-primary-dark: #447c9c;
+  --color-text: #223038;
+  --color-muted: #6B7A82;
+  --color-border: #D6E3EB;
+  --font-body: "Inter", system-ui, sans-serif;
+  --max-width: 1300px;
+}
+ 
+*{ box-sizing: border-box; }
+html, body{ margin: 0; padding: 0; }
+body{
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.55;
+}
+a{ color: var(--color-primary-dark); text-decoration: none; }
+a:hover{ text-decoration: underline; }
+img{ max-width: 100%; display: block; }
+.contenedor{ max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+ 
+/* -------- Header / navegación -------- */
+.encabezado{
+  background: var(--color-primary);
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+.encabezado .contenedor{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px;
+  position: relative;
+}
+.logo{
+  display: flex;
+  align-items: center;
+  gap: .5em;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+.logo img{ height: 60px; width: auto; }
+.nav-principal{ display: flex; align-items: center; gap: 28px; }
+.nav-links{ display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
+.nav-links a{ color: #eaf3f8; font-weight: 500; }
+.nav-links a.activo, .nav-links a:hover{ color: #fff; font-weight: 700; text-decoration: none; }
+.nav-acciones{ display: flex; align-items: center; gap: 16px; }
+.nav-acciones a{ color: #fff; font-weight: 600; }
+.menu-hamburguesa{
+  display: none;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.6rem;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+ 
+@media (max-width: 860px){
+  .menu-hamburguesa{ display: block; }
+  .nav-principal{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--color-primary-dark);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 18px 24px;
+    gap: 18px;
+    display: none;
+  }
+  .nav-principal.abierto{ display: flex; }
+  .nav-links{ flex-direction: column; gap: 14px; }
+}
+ 
+/* -------- Footer -------- */
+.pie{
+  background: var(--color-primary-dark);
+  color: #d6e6ee;
+  margin-top: 60px;
+}
+.pie .contenedor{
+  padding: 40px 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  align-items: start;
+}
+.pie h4{ color: #fff; margin: 0 0 8px; }
+.pie p{ margin: 0 0 6px; }
+.pie a{ color: #d6e6ee; }
+.pie small{
+  display: block;
+  text-align: center;
+  padding: 14px;
+  border-top: 1px solid rgba(255,255,255,.15);
+  color: #a9c3d1;
+}
+ 
+.pie-marca{
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+.pie-marca img{
+  height: 130px;
+  width: auto;
+  flex-shrink: 0;
+}
+ 
