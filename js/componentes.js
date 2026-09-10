@@ -22,7 +22,7 @@ function renderHeader(paginaActiva, base) {
 
   const html = `
   <div class="contenedor">
-    <a class="logo" href="${base}index.html"><img src="img/Logo_SanMarcos.png" alt="Veterinaria San Marcos"></a>
+    <a class="logo" href="${base}index.html"><img src="${base}img/Logo_SanMarcos.png" alt="Veterinaria San Marcos"></a>
     <button class="menu-hamburguesa" id="btnMenu" aria-label="Abrir menú">☰</button>
     <nav class="nav-principal" id="navPrincipal">
       <ul class="nav-links">${enlaces}</ul>
@@ -45,21 +45,22 @@ function renderFooter(base) {
   const html = `
   <div class="contenedor">
     <div class="pie-marca">
-      <img src="img/Logo_SanMarcos.png" alt="Veterinaria San Marcos">
+      <img src="${base}img/Logo_SanMarcos.png" alt="Veterinaria San Marcos">
       <div>
         <h4>Veterinaria San Marcos</h4>
         <p>Santiago, Región Metropolitana.<br>Atención de mascotas desde 2009.</p>
       </div>
     </div>
     <div>
-      <h4>Enlaces</h4>
+      <h4>Navegación</h4>
       <p><a href="${base}paginas/productos.html">Productos</a></p>
       <p><a href="${base}paginas/nosotros.html">Nosotros</a></p>
-      <p><a href="${base}paginas/contacto.html">Contacto</a></p>
+      <p><a href="${base}paginas/contacto.html">Contactanos</a></p>
+      <p><a href="${base}paginas/blogs.html">Blogs</a></p>
     </div>
     <div>
       <h4>Contacto</h4>
-      <p>contacto@veterinariasanmarcos.cl<br>+56 9 0000 0000</p>
+      <p>contacto@veterinariasanmarcos.cl<br>+56 9 5486 5698</p>
     </div>
   </div>
   <small>&copy; ${new Date().getFullYear()} Veterinaria San Marcos — Derechos reservados</small>`;

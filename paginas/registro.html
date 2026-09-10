@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Crear cuenta — Veterinaria San Marcos</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;700&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+  <section class="seccion">
+    <div class="contenedor">
+      <form class="formulario" id="formRegistro" novalidate>
+        <h1 class="texto-centro">Crear cuenta</h1>
+        <div class="campo">
+          <label for="run">RUN (sin puntos ni guion)</label>
+          <input type="text" id="run" maxlength="9" placeholder="19011022K">
+          <span class="mensaje-error" id="error-run"></span>
+        </div>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" maxlength="50">
+          <span class="mensaje-error" id="error-nombre"></span>
+        </div>
+        <div class="campo">
+          <label for="apellidos">Apellidos</label>
+          <input type="text" id="apellidos" maxlength="100">
+          <span class="mensaje-error" id="error-apellidos"></span>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" maxlength="100" placeholder="tucorreo@duoc.cl">
+          <span class="mensaje-error" id="error-correo"></span>
+        </div>
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" maxlength="10" placeholder="Entre 4 y 10 caracteres">
+          <span class="mensaje-error" id="error-clave"></span>
+        </div>
+        <div class="campo">
+          <label for="fechaNacimiento">Fecha de nacimiento (opcional)</label>
+          <input type="date" id="fechaNacimiento">
+        </div>
+        <div class="campo">
+          <label for="region">Región</label>
+          <select id="region"></select>
+          <span class="mensaje-error" id="error-region"></span>
+        </div>
+        <div class="campo">
+          <label for="comuna">Comuna</label>
+          <select id="comuna" disabled><option>Seleccione región primero</option></select>
+          <span class="mensaje-error" id="error-comuna"></span>
+        </div>
+        <div class="campo">
+          <label for="direccion">Dirección</label>
+          <input type="text" id="direccion" maxlength="300">
+          <span class="mensaje-error" id="error-direccion"></span>
+        </div>
+        <button type="submit">Crear cuenta</button>
+        <p class="mensaje-exito oculto" id="mensajeOk">Cuenta creada correctamente (guardada localmente para esta demo).</p>
+      </form>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="../js/carrito.js"></script>
+<script src="../js/productos-data.js"></script>
+<script src="../js/componentes.js"></script>
+<script src="../js/regiones.js"></script>
+<script src="../js/validaciones.js"></script>
+<script src="../js/admin.js"></script>
+<script>
+  initLayout("home", "../");
+  inicializarSelectRegionComuna("region", "comuna");
+  document.getElementById("formRegistro").addEventListener("submit", (e) => guardarFormularioUsuario(e, false));
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iniciar sesión — Veterinaria San Marcos</title>
+<link rel="icon" type="image/png" href="/img/Logo_SanMarcos.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+  <section class="seccion">
+    <div class="contenedor">
+      <form class="formulario" id="formLogin" novalidate>
+        <h1 class="texto-centro">Iniciar sesión</h1>
+        <div class="campo">
+          <label for="correo">Correo electrónico</label>
+          <input type="email" id="correo" maxlength="100" placeholder="tucorreo@duoc.cl">
+          <span class="mensaje-error" id="error-correo"></span>
+        </div>
+        <div class="campo">
+          <label for="clave">Contraseña</label>
+          <input type="password" id="clave" maxlength="10" placeholder="Entre 4 y 10 caracteres">
+          <span class="mensaje-error" id="error-clave"></span>
+        </div>
+        <button type="submit">Ingresar</button>
+        <p class="texto-centro" style="margin-top:16px;">¿No tienes cuenta? <a href="registro.html">Regístrate aquí</a></p>
+        <p class="mensaje-exito oculto" id="mensajeOk">Inicio de sesión validado (demo, sin backend aún).</p>
+      </form>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="../js/carrito.js"></script>
+<script src="../js/componentes.js"></script>
+<script src="../js/validaciones.js"></script>
+<script>
+  initLayout("home", "../");
+  document.getElementById("formLogin").addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (validarLogin()) document.getElementById("mensajeOk").classList.remove("oculto");
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — Veterinaria San Marcos</title>
+<link rel="icon" type="image/png" href="/img/Logo_SanMarcos.png">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+<div id="site-header"></div>
+<main>
+  <section class="seccion">
+    <div class="contenedor">
+      <form class="formulario" id="formContacto" novalidate>
+        <h1 class="texto-centro">Contáctanos</h1>
+        <p class="texto-centro">¿Dudas sobre un producto o nuestros servicios? Escríbenos.</p>
+        <div class="campo">
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" maxlength="100">
+          <span class="mensaje-error" id="error-nombre"></span>
+        </div>
+        <div class="campo">
+          <label for="correo">Correo electrónico (opcional)</label>
+          <input type="email" id="correo" maxlength="100" placeholder="tucorreo@duoc.cl">
+          <span class="mensaje-error" id="error-correo"></span>
+        </div>
+        <div class="campo">
+          <label for="comentario">Comentario</label>
+          <textarea id="comentario" rows="5" maxlength="500"></textarea>
+          <span class="mensaje-error" id="error-comentario"></span>
+        </div>
+        <button type="submit">Enviar mensaje</button>
+        <p class="mensaje-exito oculto" id="mensajeOk">¡Gracias! Tu mensaje fue enviado (demo, sin backend aún).</p>
+      </form>
+    </div>
+  </section>
+</main>
+<div id="site-footer"></div>
+<script src="../js/carrito.js"></script>
+<script src="../js/componentes.js"></script>
+<script src="../js/validaciones.js"></script>
+<script>
+  initLayout("contacto", "../");
+  document.getElementById("formContacto").addEventListener("submit", (e) => {
+    e.preventDefault();
+    if (validarContacto()) {
+      document.getElementById("mensajeOk").classList.remove("oculto");
+      e.target.reset();
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nuevo usuario — Veterinaria San Marcos</title>
+<link rel="icon" type="image/png" href="../img/Logo_SanMarcos.png">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+<div id="site-header"></div>
+<div class="admin-layout">
+  <nav class="admin-menu">
+    <a href="index.html">Inicio</a>
+    <a href="productos.html">Productos</a>
+    <a href="usuarios.html" class="activo">Usuarios</a>
+  </nav>
+  <div class="admin-contenido">
+    <h1>Nuevo usuario</h1>
+    <form class="formulario" id="formUsuario" novalidate style="margin:0;">
+      <div class="campo">
+        <label for="run">RUN (sin puntos ni guion)</label>
+        <input type="text" id="run" maxlength="9" placeholder="19011022K">
+        <span class="mensaje-error" id="error-run"></span>
+      </div>
+      <div class="campo">
+        <label for="nombre">Nombre</label>
+        <input type="text" id="nombre" maxlength="50">
+        <span class="mensaje-error" id="error-nombre"></span>
+      </div>
+      <div class="campo">
+        <label for="apellidos">Apellidos</label>
+        <input type="text" id="apellidos" maxlength="100">
+        <span class="mensaje-error" id="error-apellidos"></span>
+      </div>
+      <div class="campo">
+        <label for="correo">Correo electrónico</label>
+        <input type="email" id="correo" maxlength="100" placeholder="tucorreo@duoc.cl">
+        <span class="mensaje-error" id="error-correo"></span>
+      </div>
+      <div class="campo">
+        <label for="fechaNacimiento">Fecha de nacimiento (opcional)</label>
+        <input type="date" id="fechaNacimiento">
+      </div>
+      <div class="campo">
+        <label for="tipoUsuario">Tipo de usuario</label>
+        <select id="tipoUsuario">
+          <option>Administrador</option>
+          <option>Vendedor</option>
+          <option selected>Cliente</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="region">Región</label>
+        <select id="region"></select>
+        <span class="mensaje-error" id="error-region"></span>
+      </div>
+      <div class="campo">
+        <label for="comuna">Comuna</label>
+        <select id="comuna" disabled><option>Seleccione región primero</option></select>
+        <span class="mensaje-error" id="error-comuna"></span>
+      </div>
+      <div class="campo">
+        <label for="direccion">Dirección</label>
+        <input type="text" id="direccion" maxlength="300">
+        <span class="mensaje-error" id="error-direccion"></span>
+      </div>
+      <button type="submit">Guardar usuario</button>
+    </form>
+  </div>
+</div>
+<div id="site-footer"></div>
+<script src="../js/carrito.js"></script>
+<script src="../js/componentes.js"></script>
+<script src="../js/regiones.js"></script>
+<script src="../js/validaciones.js"></script>
+<script src="../js/admin.js"></script>
+<script>
+  initLayout("home", "../");
+  inicializarSelectRegionComuna("region", "comuna");
+  document.getElementById("formUsuario").addEventListener("submit", (e) => guardarFormularioUsuario(e, true));
+</script>
+</body>
+</html>

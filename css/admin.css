@@ -1,0 +1,19 @@
+/* Layout específico para el panel administrador */
+.admin-layout{ display:grid; grid-template-columns: 240px 1fr; min-height: calc(100vh - 64px); }
+.admin-menu{ background: var(--color-primary-dark); color:#dfe6de; padding: 24px 0; }
+.admin-menu a{ display:block; padding: 10px 24px; color:#dfe6de; }
+.admin-menu a.activo, .admin-menu a:hover{ background: var(--color-primary); color:#fff; text-decoration:none; }
+.admin-contenido{ padding: 32px; }
+.admin-contenido h1{ margin-bottom: 24px; }
+.tabla-admin{ width:100%; border-collapse: collapse; background:#fff; border:1px solid var(--color-border); border-radius: var(--radius); overflow:hidden; }
+.tabla-admin th, .tabla-admin td{ padding: 12px 14px; border-bottom:1px solid var(--color-border); text-align:left; font-size:.92rem; }
+.tabla-admin th{ background: #efece0; }
+.tabla-admin tr:last-child td{ border-bottom:none; }
+.acciones-tabla{ display:flex; gap:8px; }
+.acciones-tabla button{ padding:.35em .8em; font-size:.82rem; }
+.stock-critico{ color: var(--color-error); font-weight:700; }
+@media (max-width: 860px){
+  .admin-layout{ grid-template-columns: 1fr; }
+  .admin-menu{ display:flex; overflow-x:auto; padding:10px; }
+  .admin-menu a{ padding: 8px 14px; white-space:nowrap; }
+}

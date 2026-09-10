@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Veterinaria San Marcos</title>
   <link rel="stylesheet" href="css/style.css">
-  <link rel="icon" type="image/png" href="img/Logo_SanMarcos.png">
+  <link rel="icon" type="image/png" href="/img/Logo_SanMarcos.png">
 </head>
 <body>
   <header id="site-header"></header>
@@ -33,14 +33,16 @@
       </div>
       <div class="grid-productos" id="gridDestacados"></div>
     </div>
-  </section>n veterinar ia de calidad para tu mascota.</p>
-    </section>
+  </section>
   </main>
   <footer id="site-footer"></footer>
 
+  <script src="js/productos-data.js"></script>
+  <script src="js/productos.js"></script>
   <script src="js/componentes.js"></script>
   <script>
-    initLayout("home", "paginas/");
+    initLayout("home", "");
+    renderGrid("gridDestacados", "paginas/")
   </script>
 </body>
 </html>
